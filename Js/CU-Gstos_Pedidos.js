@@ -6,10 +6,9 @@ $("#IngresarGastos").button().on("click",function(event){
     nit=$("#inputNit").val();
     numerofactura=$("#inputNumeroFactura").val();
     nombreempresa=$("#inputNombreEmpresa").val();
-    fecha=$("#inputFecha").val();
     if(costo!="" && !isNaN(costo) && costo>=0){
         if(nit !="" && !isNaN(nit) && nit>0 && numerofactura != "" && !isNaN(numerofactura) && numerofactura>0){
-            $.post("../Controller/controladora.php",{costo:costo,descripcion:descripcion,nit:nit,numerofactura:numerofactura,nombreempresa:nombreempresa,fecha:fecha,funcion:1},function(respuesta){
+            $.post("../Controller/controladora.php",{costo:costo,descripcion:descripcion,nit:nit,numerofactura:numerofactura,nombreempresa:nombreempresa,funcion:1},function(respuesta){
                 alert(respuesta);
             })
             

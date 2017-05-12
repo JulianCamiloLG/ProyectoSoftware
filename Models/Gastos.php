@@ -19,9 +19,14 @@ class Gastos{
     public function IngresarGasto(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="insert into gastos values($this->valor,'$this->descripcion',$this->nit,$this->numerofactura,'$this->nombreempresa,current_date);";
-        pg_exec($Sql);
-        echo json_encode($temp);
+        $Sql="insert into gastos values($this->valor,'$this->descripcion',$this->nit,$this->numerofactura,'$this->nombreempresa',current_date);";
+        $Sql1="update gastostotalesturno set gastostotales=gastostotales+$this->valor";
+        $result=pg_exec($Sql);
+        if (!$result){
+            echo ("Error al ingresar el gasto");
+        }
+        pg_exec($Sql1);
+        echo json_encode("Gasto ingresado con exito");
     }
 }
 ?>

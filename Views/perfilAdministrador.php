@@ -43,7 +43,7 @@
 								<dd class="dropdown-menu" role="menu">
 									<li><a href="CU-Gastos-Pedidos.html" target="iframeVistas">Ingresar Gastos por pedidos</a></li>
 									<li class="divider"></li>
-									<li><a href="vistaIEvaluador.html">Hacer cuadre de caja por turno</a></li>
+									<li><a href="CU-Cuadre-Caja.html">Hacer cuadre de caja por turno</a></li>
 									<li class="divider"></li>
 									<li><a href="###">Consultar cuadre de caja por sede</a></li>
 									<li class="divider"></li>

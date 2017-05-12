@@ -19,7 +19,7 @@ class Gastos{
     public function IngresarGasto(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="insert into gastos values($this->valor,'$this->descripcion',$this->nit,$this->numerofactura,'$this->nombreempresa',current_date);";
+        $Sql="insert into gastos values($this->valor,'$this->descripcion',$this->numerofactura,'$this->nombreempresa',current_date,$this->nit);";
         $Sql1="update gastostotalesturno set gastostotales=gastostotales+$this->valor";
         $result=pg_exec($Sql);
         if (!$result){

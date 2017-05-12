@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
         <link rel="icon" href="../Imagenes/Favicon.ico">
         <link rel="stylesheet" href="../Css/estilos.css">
-        <title>Administrador(a)</title>
+        <title>Empleado</title>
 	</head>
 	<body class="fondo-autor">
 		<section class="jumbotron">
@@ -43,16 +43,16 @@
 								<dd class="dropdown-menu" role="menu">
 									<li><a href="CU-Gastos-Pedidos.html" target="iframeVistas">Ingresar Gastos por pedidos</a></li>
 									<li class="divider"></li>
-									<li><a href="vistaIEvaluador.html">Hacer cuadre de caja por turno</a></li>
+									<li><a href="###">###</a></li>
 									<li class="divider"></li>
-									<li><a href="vistaIEditor.html">Consultar cuadre de caja por sede</a></li>
+									<li><a href="###">###</a></li>
 									<li class="divider"></li>
-									<li><a href="vistaIEditor.html">Consultar cuadre de caja total</a></li>
+									<li><a href="###">###</a></li>
 								</dd>
 							</li>
 						</dd>
 						<form action="" class="navbar-form navbar-right" role="search">
-							<button type="button" class="btn btn-warning" name="CerrarsesionAutor" id="CerrarsesionAdministrador">Cerrar Sesión
+							<button type="button" class="btn btn-warning" name="Cerrarsesion" id="Cerrarsesion">Cerrar Sesión
 								<span class="glyphicon glyphicon-log-out"></span>
 							</button>
 						</form>
@@ -78,7 +78,7 @@
 		<script src="../Jquery/jquery-1.11.1.min.js" ></script>
         <script src="../Jquery/jquery.backstretch.min.js" type="text/javascript"></script>
         <script src="../Boostrap/js/bootstrap.min.js"></script>
-		<script src="../Js/Administrador.js" type="text/javascript" language="javascript1.5"></script>
+        <script src="../Js/Sesiones.js" type="text/javascript" language="javascript1.5"></script>
 	</body>
 	<link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../Css/estilos.css">

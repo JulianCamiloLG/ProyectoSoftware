@@ -17,7 +17,13 @@ class GastoTurno{
             echo ("Error al ingresar el gasto");
         }
        $row = pg_fetch_row($result);
-       echo json_encode($row);
+       return ($row[0]);
+    }
+    public function reiniciar(){
+     $BDD=new BaseDeDatos();
+     $temp=$BDD->ConectarBDD();
+     $Sql="update gastostotalesturno set gastostotales=0";
+     $result=pg_exec($Sql);
     }
 }
 

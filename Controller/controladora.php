@@ -44,18 +44,22 @@ class controladora{
     public function CuadreCaja($sede,$venta){
         $gastosTurno=new GastoTurno();
         $gastos=$gastosTurno->obtenerGastos();
-        $venta+=6;
-        //$utilidades=$venta-$gastos;
+        $utilidades=$venta-$gastos;
         //$base= new Base();
         //$base->getBase();
-        //$base=300000;
-        //$ganancia=$utilidades-$base;
-        //$cuadre = new CuadreCaja($ganancia,$venta,$gastos,$base);
-        //$cuadre->IngresarCuadre();
-        //$respuesta=["Ganancia:" => $ganancia, "Venta:" =>$venta, "Gastos:"=>$gastos,"Base:"=>$base];
-        //$gastosTurno->reiniciar();
-        echo ($venta);
+        $base=300000;
+        $ganancia=$utilidades-$base;
+        $cuadre = new CuadreCaja($ganancia,$venta,$gastos,$base,$sede);
+        $cuadre->IngresarCuadre();
+        $respuesta=["Ganancia:" => $ganancia, "Venta:" =>$venta, "Gastos:"=>$gastos,"Base:"=>$base];
+        $gastosTurno->reiniciar();
+        echo json_encode($respuesta);
 
+    }
+
+    public function ConsultarCuadreDeCaja($tipo){
+        $consulta=new CuadreCaja();
+        $return=$consulta->ConsultarCuadre();
     }
 }
 
@@ -66,6 +70,10 @@ switch($_REQUEST['funcion']){
         //Ingresar gastos
         $controladora->IngresarGasto($_REQUEST['costo'],$_REQUEST['descripcion'],$_REQUEST['nit'],$_REQUEST['numerofactura'],$_REQUEST['nombreempresa']);
         break;
+     case 2:
+        //Cuadre de caja
+        $controladora->CuadreCaja($_REQUEST['sede'],$_REQUEST['venta']);
+        break;
     case 3:
         //Loggear usuario
         $controladora->LoginUsuario($_REQUEST['user'],$_REQUEST['password']);
@@ -74,11 +82,12 @@ switch($_REQUEST['funcion']){
         //Cerrar sesion
         $controladora->CerrarSesion();
         break;
-
-    case 2:
-        //Cuadre de caja
-        $controladora->CuadreCaja($_REQUEST['sede'],$_REQUEST['venta']);
+    case 5:
+        //Consultar cuadre de caja
+        $controladora->ConsultarCuadreDeCaja($_REQUEST['tipo']);
         break;
+
+
 }
 
 ?>

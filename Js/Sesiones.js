@@ -14,6 +14,7 @@ $("#Ingresar").button().on("click",function(event){
                 alert("¡¡BIENVENIDO " + user + "!!");
                 parent.window.location='perfilJProduccion.php';
             }else{
+                alert(respuesta);
                 alert("Usuario o contraseña no encontrado");
             }
         })

@@ -1,12 +1,19 @@
 <?php
 include_once("../Models/Gastos.php");
+<<<<<<< HEAD
 include_once("../Models/Login.php");
+=======
+include_once("../Models/CuadreCaja.php");
+include_once("../Models/GastoTurno.php");
+//include_once("../Models/Base.php");
+>>>>>>> origin/master
 
 class controladora{
     public function IngresarGasto($valor,$descripcion,$nit,$numerofactura,$nombreempresa){
         $gasto=new Gastos($valor,$descripcion,$nit,$numerofactura,$nombreempresa);
         $gasto->IngresarGasto();
     }
+<<<<<<< HEAD
 
     public function LoginUsuario($user,$password){
         $login=new Login($user,$password,"");
@@ -36,8 +43,26 @@ class controladora{
 		session_unset();
 		session_destroy();
 		echo json_encode(1);
+=======
+    public function CuadreCaja($sede,$venta){
+        $gastosTurno=new GastoTurno();
+        $gastos=$gastosTurno->obtenerGastos();
+        $venta+=6;
+        //$utilidades=$venta-$gastos;
+        //$base= new Base();
+        //$base->getBase();
+        //$base=300000;
+        //$ganancia=$utilidades-$base;
+        //$cuadre = new CuadreCaja($ganancia,$venta,$gastos,$base);
+        //$cuadre->IngresarCuadre();
+        //$respuesta=["Ganancia:" => $ganancia, "Venta:" =>$venta, "Gastos:"=>$gastos,"Base:"=>$base];
+        //$gastosTurno->reiniciar();
+        echo ($venta);
+
+>>>>>>> origin/master
     }
 }
+
 
 $controladora=new controladora();
 switch($_REQUEST['funcion']){
@@ -45,6 +70,7 @@ switch($_REQUEST['funcion']){
         //Ingresar gastos
         $controladora->IngresarGasto($_REQUEST['costo'],$_REQUEST['descripcion'],$_REQUEST['nit'],$_REQUEST['numerofactura'],$_REQUEST['nombreempresa']);
         break;
+<<<<<<< HEAD
     case 3:
         //Loggear usuario
         $controladora->LoginUsuario($_REQUEST['user'],$_REQUEST['password']);
@@ -54,6 +80,12 @@ switch($_REQUEST['funcion']){
         $controladora->CerrarSesion();
         break;
 
+=======
+    case 2:
+        //Cuadre de caja
+        $controladora->CuadreCaja($_REQUEST['sede'],$_REQUEST['venta']);
+        break;
+>>>>>>> origin/master
 }
 
 ?>

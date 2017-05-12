@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
         <link rel="icon" href="../Imagenes/Favicon.ico">
         <link rel="stylesheet" href="../Css/estilos.css">
-        <title>Administrador(a)</title>
+        <title>Perfil de Usuario</title>
 	</head>
 	<body class="fondo-autor">
 		<section class="jumbotron">

@@ -31,12 +31,15 @@ class CuadreCaja{
         $temp=$BDD->ConectarBDD();
         $Sql="select * from cuadrecaja";
         $Registros=pg_exec($Sql);
-		return($Registros);
+        while($row =pg_fetch_assoc($Registros)){
+            $test[]=$row;
+        }
+		return($test);
     }
     public function ConsultarCuadreSede(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="select * from cuadrecaja where sede=$this->sede";
+        $Sql="select * from cuadrecaja where sede='$this->sede';";
         $Registros=pg_exec($Sql);
 		return($Registros);
     }

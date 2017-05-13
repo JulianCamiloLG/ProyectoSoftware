@@ -57,9 +57,42 @@ class controladora{
 
     }
 
-    public function ConsultarCuadreDeCaja($tipo){
-        $consulta=new CuadreCaja();
-        $return=$consulta->ConsultarCuadre();
+    public function ConsultarCuadreDeCaja($tipo,$sede){
+        //echo ($tipo);
+        if($tipo=="total"){
+            $consulta=new CuadreCaja("","","","","");
+            $Registros=$consulta->ConsultarCuadreTotal();
+           /* $Filas=pg_num_rows($Registros);
+            for($cont=0;$cont<$Filas;$cont++){
+                $vec=array("ingresos"=>"".pg_result($Registros,$cont,0),
+					   "gastos"=>"".pg_result($Registros,$cont,1),
+					   "base"=>"".pg_result($Registros,$cont,2),
+					   "ganancia"=>"".pg_result($Registros,$cont,3),
+                       "fecha"=>"".pg_result($Registros,$cont,4),
+                       "sede"=>"".pg_result($Registros,$cont,5),
+                       "turno"=>"".pg_result($Registros,$cont,6),);
+                $M[$cont]=$vec;
+            }
+            $vec=$M;*/
+		  echo json_encode($Registros);
+
+        }elseif($tipo=="sede")
+            $consulta=new CuadreCaja("","","","",$sede);
+            $Registros=$consulta->ConsultarCuadreSede();
+            $Filas=pg_num_rows($Registros);
+            for($cont=0;$cont<$Filas;$cont++){
+                $vec=array("ingresos"=>"".pg_result($Registros,$cont,0),
+					   "gastos"=>"".pg_result($Registros,$cont,1),
+					   "base"=>"".pg_result($Registros,$cont,2),
+					   "ganancia"=>"".pg_result($Registros,$cont,3),
+                       "fecha"=>"".pg_result($Registros,$cont,4),
+                       "sede"=>"".pg_result($Registros,$cont,5),
+                       "turno"=>"".pg_result($Registros,$cont,6),);
+                $M[$cont]=$vec;
+            }
+            $vec=$M;
+		    echo json_encode($vec);
+
     }
 }
 
@@ -84,7 +117,7 @@ switch($_REQUEST['funcion']){
         break;
     case 5:
         //Consultar cuadre de caja
-        $controladora->ConsultarCuadreDeCaja($_REQUEST['tipo']);
+        $controladora->ConsultarCuadreDeCaja($_REQUEST['tipo'],$_REQUEST['sede']);
         break;
 
 

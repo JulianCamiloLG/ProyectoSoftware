@@ -26,39 +26,55 @@ $("#CuadreCaja").on("click",function(argument){
     }
 
 });
-$("#consultarCaja").on("click",function(argument){
-    $.post("../Controller/controladora.php",{funcion:11},function(respuesta){
-        //alert(respuesta);
-        var datos= jQuery.parseJSON(respuesta);
+});
+
+$("#consultarCajaTotal").button().on("click",function(event){
+    $.post("../Controller/controladora.php",{tipo:"total",sede:"",funcion:5},function(respuesta){
+        console.log(respuesta);
+        var datos=JSON.parse(respuesta);
+        console.log(datos);
 		for (var i in datos){
+            console.log("i: " + i);
             var elementotr=document.createElement('tr');
             // creacion primer td y se lo asigno al padre tr
             var elementotd=document.createElement('td');
             elementotr.appendChild(elementotd);
-            var texto=document.createTextNode(datos[i].numeroarticulo);
+            var texto=document.createTextNode(datos[i].ingresos);
             elementotd.appendChild(texto);
             elementotd.setAttribute("align","center");
             // creacion segundo td y se lo asigno al padre tr
             var elementotd=document.createElement('td');
             elementotr.appendChild(elementotd);
-            var texto=document.createTextNode(datos[i].decision);
+            var texto=document.createTextNode(datos[i].gastos);
             elementotd.appendChild(texto);
             elementotd.setAttribute("align","center");
             var elementotd=document.createElement('td');
             elementotr.appendChild(elementotd);
-            var texto=document.createTextNode(datos[i].titulo);
+            var texto=document.createTextNode(datos[i].base);
             elementotd.appendChild(texto);
             elementotd.setAttribute("align","center");
-            var elementotd=document.createElement('td');
+             var elementotd=document.createElement('td');
             elementotr.appendChild(elementotd);
-            var elemtoa=document.createElement('a');
-            elemtoa.setAttribute('href',"../Models/Leer.php?"+'numeroarticulo='+datos[i].numeroarticulo);
-            var createAText = document.createTextNode('Ver Comentarios');
-            elemtoa.appendChild(createAText);
-            elementotd.appendChild(elemtoa);
+            var texto=document.createTextNode(datos[i].ganancia);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
+             var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var texto=document.createTextNode(datos[i].fecha);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
+             var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var texto=document.createTextNode(datos[i].numeroarticulo);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
+             var elementotd=document.createElement('td');
+            elementotr.appendChild(elementotd);
+            var texto=document.createTextNode(datos[i].numeroarticulo);
+            elementotd.appendChild(texto);
+            elementotd.setAttribute("align","center");
             var obj=document.getElementById('Contenido');
             obj.appendChild(elementotr);
         }
-    });
-});
-});
+    })
+})

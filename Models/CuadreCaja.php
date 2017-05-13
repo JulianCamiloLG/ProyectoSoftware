@@ -29,14 +29,14 @@ class CuadreCaja{
     public function ConsultarCuadreTotal(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="select * from cuadrecaja;";
+        $Sql="select ingresos,gastos,base,ganancia,fecha,sede,turno from cuadrecaja;";
         $Registros=pg_exec($Sql);
 		return($Registros);
     }
     public function ConsultarCuadreSede(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="select * from cuadrecaja where sede='$this->sede';";
+        $Sql="select ingresos,gastos,base,ganancia,fecha,sede,turno from cuadrecaja where sede='$this->sede';";
         $Registros=pg_exec($Sql);
 		return($Registros);
     }

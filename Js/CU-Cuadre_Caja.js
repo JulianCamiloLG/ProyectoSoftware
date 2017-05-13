@@ -114,7 +114,7 @@ $("#consultarCajaSede").button().on("click",function(event){
             elementotd.setAttribute("align","center");
              var elementotd=document.createElement('td');
             elementotr.appendChild(elementotd);
-            var texto=document.createTextNode(datos[i].sede);
+            var texto=document.createTextNode($("#sede").val());
             elementotd.appendChild(texto);
             elementotd.setAttribute("align","center");
              var elementotd=document.createElement('td');

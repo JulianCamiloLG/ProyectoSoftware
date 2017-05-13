@@ -31,8 +31,7 @@ $("#CuadreCaja").on("click",function(argument){
 $("#consultarCajaTotal").button().on("click",function(event){
     $.post("../Controller/controladora.php",{tipo:"total",sede:"",funcion:5},function(respuesta){
         console.log(respuesta);
-        var datos=JSON.parse(respuesta);
-        console.log(datos);
+        var datos=jQuery.parseJSON(respuesta);
 		for (var i in datos){
             console.log("i: " + i);
             var elementotr=document.createElement('tr');

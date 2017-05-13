@@ -62,7 +62,7 @@ class controladora{
         if($tipo=="total"){
             $consulta=new CuadreCaja("","","","","");
             $Registros=$consulta->ConsultarCuadreTotal();
-           /* $Filas=pg_num_rows($Registros);
+            $Filas=pg_num_rows($Registros);
             for($cont=0;$cont<$Filas;$cont++){
                 $vec=array("ingresos"=>"".pg_result($Registros,$cont,0),
 					   "gastos"=>"".pg_result($Registros,$cont,1),
@@ -73,8 +73,8 @@ class controladora{
                        "turno"=>"".pg_result($Registros,$cont,6),);
                 $M[$cont]=$vec;
             }
-            $vec=$M;*/
-		  echo json_encode($Registros);
+		$vec=$M;
+		echo json_encode($vec);
 
         }elseif($tipo=="sede")
             $consulta=new CuadreCaja("","","","",$sede);
@@ -90,8 +90,8 @@ class controladora{
                        "turno"=>"".pg_result($Registros,$cont,6),);
                 $M[$cont]=$vec;
             }
-            $vec=$M;
-		    echo json_encode($vec);
+		$vec=$M;
+		echo json_encode($vec);
 
     }
 }

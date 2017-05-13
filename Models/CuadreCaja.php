@@ -29,12 +29,9 @@ class CuadreCaja{
     public function ConsultarCuadreTotal(){
         $BDD=new BaseDeDatos();
         $temp=$BDD->ConectarBDD();
-        $Sql="select * from cuadrecaja";
+        $Sql="select * from cuadrecaja;";
         $Registros=pg_exec($Sql);
-        while($row =pg_fetch_assoc($Registros)){
-            $test[]=$row;
-        }
-		return($test);
+		return($Registros);
     }
     public function ConsultarCuadreSede(){
         $BDD=new BaseDeDatos();

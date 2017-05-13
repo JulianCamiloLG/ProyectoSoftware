@@ -45,9 +45,9 @@
 									<li class="divider"></li>
 									<li><a href="CU-Cuadre-Caja.html" target="iframeVistas">Hacer cuadre de caja por turno</a></li>
 									<li class="divider"></li>
-									<li><a href="CU-Consultar-Cuadre-Sede.html">Consultar cuadre de caja por sede</a></li>
+									<li><a href="CU-Consultar-Cuadre-Sede.html" target="iframeVistas">Consultar cuadre de caja por sede</a></li>
 									<li class="divider"></li>
-									<li><a href="CU-Consultar-Cuadre-Total.html">Consultar cuadre de caja total</a></li>
+									<li><a href="CU-Consultar-Cuadre-Total.html" target="iframeVistas">Consultar cuadre de caja total</a></li>
 									<li class="divider"></li>
 									<li><a href="###">Registrar empleado</a></li>
 								</dd>

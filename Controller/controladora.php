@@ -76,7 +76,7 @@ class controladora{
 		$vec=$M;
 		echo json_encode($vec);
 
-        }elseif($tipo=="sede")
+        }elseif($tipo=="sede"){
             $consulta=new CuadreCaja("","","","",$sede);
             $Registros=$consulta->ConsultarCuadreSede();
             $Filas=pg_num_rows($Registros);
@@ -92,7 +92,7 @@ class controladora{
             }
 		$vec=$M;
 		echo json_encode($vec);
-
+        }
     }
 }
 

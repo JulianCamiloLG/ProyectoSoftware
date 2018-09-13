@@ -1,3 +1,3 @@
 # ProyectoSoftware 1
-Aplicacion Web desarrollada en PHP-HTML5-JS Y JQUERY, con base de datos PostgresSQL
+Aplicacion Web desarrollada en PHP-HTML5-JS Y JQUERY, con base de datos PostgresSQL<br>
 Pequeña contabilidad y Control de suministros de una venta de empanadas local
